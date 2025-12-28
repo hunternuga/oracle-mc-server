@@ -66,7 +66,7 @@ resource "oci_core_instance" "generated_oci_core_instance" {
   availability_config {
     recovery_action = "RESTORE_INSTANCE"
   }
-  availability_domain = "iRfa:US-SANJOSE-1-AD-1"
+  availability_domain = var.availability_domain
   compartment_id      = "ocid1.tenancy.oc1..aaaaaaaaa72kuwarbexpudwxmrltalhj4wwl4bcta3wvo2pggfbudgynfgwa"
   create_vnic_details {
     assign_ipv6ip             = "false"
@@ -89,7 +89,7 @@ resource "oci_core_instance" "generated_oci_core_instance" {
     ocpus         = "4"
   }
   source_details {
-    source_id   = "ocid1.image.oc1.us-sanjose-1.aaaaaaaagd2ujisye2n4qrqxehgkfgqefbthic7pph4sdabdwe5hpjn2yxia"
+    source_id   = "ocid1.image.oc${var.region}.aaaaaaaagd2ujisye2n4qrqxehgkfgqefbthic7pph4sdabdwe5hpjn2yxia"
     source_type = "image"
   }
 }
